@@ -11,6 +11,14 @@ This template uses the "IIFE" (or "script") version of the uibuilder client libr
 
 You could manually copy the template folders into your uibuilder instance root folder but it is much easier to use the built-in template manager in uibuilder. This will copy the template into your uibuilder instance and set it up for you.
 
+Once loaded into your uibuilder instance, no updattes will be made to the template files by uibuilder. If you want to update the template, you can do so by re-doing the installation. Of course, this will overwrite all files of the same name so if you want to retain anything you have done, make a copy first.
+
+## UI
+
+tbc
+
+There is an empty `<div>` element with the id `more`. This is included in all uibuilder templates. It is used by the uibuilder example flows that output dynamic UI elements. You may find it convenient to use for your own purposes. You can add your own elements to it in the HTML or JavaScript code. The uibuilder example flows will add their own elements to it when they are run.
+
 ## Folders
 
 * `/` - The root folder contains this file. It can be used for other things **but** it will not be served up in the Node-RED web server. 
@@ -18,7 +26,7 @@ You could manually copy the template folders into your uibuilder instance root f
 * `/dist/` - the default folder for serving files as web resources where a build step is used. In that case, the `/src` folder is the source used by the build tool and `/dist` is the destination for the build (the "distribution" folder).
 * `/routes/` - This folder can contain `.js` files defining routing middleware for uibuilder's ExpressJS web server.
 * `/api/` - This folder can contain `.js` files defining REST API's specific to this uibuilder instance.
-* `/types/` - Contains typescript definition files (*.d.ts) for the uibuilder client library. This is not used by uibuilder but can be used by your IDE to provide type checking and auto-completion for the uibuilder client library. This is useful if you are using TypeScript or JavaScript with type checking enabled. Remember to update these for new uibuilder versions.
+* `/types/` - Contains typescript definition files (`*.d.ts`) for the uibuilder client library. This is not used by uibuilder but can be used by your IDE to provide type checking and auto-completion for the uibuilder client library. This is useful if you are using TypeScript or JavaScript with type checking enabled. Remember to update these for new uibuilder versions.
 
 The above folders will all pre-exist for the built-in uibuilder templates. The folders can safely be removed if not needed but one folder must exist to serve the web resources from (this cannot be the root folder).
 
@@ -56,3 +64,16 @@ uibuilder will happily serve up any number of web pages from a single instance. 
 Note that each html file is a separate page and requires its own JavaScript and uibuilder library reference. When moving between pages, remember that every page is stand-alone, a new environment. You can share one `index.js` file between multiple pages if you prefer but each page will run a separate instance. Moving the library processing to a web worker may allow sharing of connections, this will be explored in the future.
 
 If multiple pages are connected to the same uibuilder instance, they will all get the same broadcast messages from Node-RED. So if you want to handle different messages on different pages, remember to filter them in your front-end JavaScript in `uibuilder.onChange('msg', ....)` function. Turn on the advanced flag for including a `msg._uib` property in output if you need to differentiate between pages and/or clients in Node-RED.
+
+## URL endpoints
+
+When specifying links in your HTML, CSS and JavaScript files, you should use relative URLs. e.g. `./index.js` will load that file from the `src` folder or wherever else you have told uibuilder to use.
+
+When using uibuilder's server-side resources, you will generally use `../uibuilder/....`, for example `../uibuilder/uib-brand.min.css` as seen in the default `index.css` file. When accessing a front-end library being served by uibuilder, you can use the form `../uibuilder/vendor/....`. Use the "Full details" button in the uibuilder node to see all of the possible endpoints you may want to use.
+
+## License
+
+This project is licensed under the Apache 2.0 License - see the [LICENSE](LICENSE) file for details.
+
+This template may be used however you like. It is provided as a test template for uibuilder and is not intended to be a full template. You are free to use it as a starting point for your own template or to use it as-is if you find it useful.
+

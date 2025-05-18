@@ -18,9 +18,32 @@
 
 </head><body class="uib">
     
-    <h1 class="with-subtitle">Extended Template Example</h1>
-    <div role="doc-subtitle">Using the UIBUILDER IIFE library.</div>
 
     <div id="more"><!-- '#more' is used as a parent for dynamic HTML content in examples --></div>
+
+    <!-- Symantic HTML is optional but will result in better formatting and accessibility -->
+    <header>
+        <!-- Should always be 1 and only 1 H1 element-->
+        <h1 class="with-subtitle">Extended Template Example</h1>
+        <div role="doc-subtitle">Using the UIBUILDER IIFE library.</div>
+    </header>
+
+    <!-- Symantic structural elements are nicely formatted -->
+    <main>
+        <!-- Article elements appear as "cards" -->
+        <article>
+            <!-- heading levels should follow a strict hierarcy for accessibility -->
+            <h2>Extended Template Example</h2>
+            <p>This is an extended template example. It shows how to use some of the features of the UIBUILDER client library.</p>
+        </article>
+
+        <div id="more"><!-- '#more' is used as a parent for dynamic HTML content in examples --></div>
+    </main>
+
+    <footer>
+        <button id="btn1" onclick="toggleMsgs" title="See index.js for the toggleMsgs function">
+            Click to toggle visible messages from Node-RED
+        </button>
+    </footer>
 
 </body></html>

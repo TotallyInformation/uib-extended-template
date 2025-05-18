@@ -37,11 +37,24 @@
             <p>This is an extended template example. It shows how to use some of the features of the UIBUILDER client library.</p>
         </article>
 
+        <article>
+            <h2>Get user input and send to Node-RED</h2>
+            <!-- Using a form means we could capture many inputs and send with a single button -->
+            <form>
+                <label for="input1">Enter a value:</label>
+                <input type="text" id="input1" name="input1" placeholder="Enter a value">
+                <button id="btn2" onclick="uibuilder.eventSend(event)" title="The built-in eventSend function will send ALL form inputs in a standard format">
+                    Send to Node-RED
+                </button>
+            </form>
+        </article>
+
         <div id="more"><!-- '#more' is used as a parent for dynamic HTML content in examples --></div>
     </main>
 
     <footer>
-        <button id="btn1" onclick="toggleMsgs" title="See index.js for the toggleMsgs function">
+        <!-- This is a local button only -->
+        <button id="btn1" onclick="toggleMsgs()" title="See index.js for the toggleMsgs function">
             Click to toggle visible messages from Node-RED
         </button>
     </footer>

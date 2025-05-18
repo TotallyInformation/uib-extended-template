@@ -1,0 +1,26 @@
+{
+  "name": "uib-extended-template",
+  "version": "7.3.0",
+  "private": true,
+  "description": "An extended version of UIBUILDER for Node-RED's built-in default template. Includes some more advanced feature examples.",
+  "browser": "./src/index.js",
+  "scripts": {
+    "build": "echo \"No build process specified\""
+  },
+  "keywords": ["uibuilder", "node-red", "node-red-contrib-uibuilder"],
+  "author": "Julian Knight (Totally Information)",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/TotallyInformation/uib-extended-template",
+  "bugs": "https://github.com/TotallyInformation/uib-extended-template/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TotallyInformation/uib-extended-template.git"
+  },
+  "browserslist": [
+    "> 0.5%",
+    "maintained versions",
+    "last 2 versions",
+    "not dead",
+    "not ie > 0"
+  ]
+}
